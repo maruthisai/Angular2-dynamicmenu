@@ -1,0 +1,6 @@
+<li *ngFor="let submenu of menudata" [class.dropdown-submenu]="submenu.submenu">
+    <a *ngIf="!submenu.submenu" tabindex="-1" routerLink="{{submenu.path}}" routerLinkActive="active" (click)="menuClicked(submenu)">{{submenu.name}}</a>
+    <a *ngIf="submenu.submenu" class="test" routerLink="{{submenu.path}}" routerLinkActive="active">{{submenu.name}}<span class="caret"></span>
+    </a>
+    <ul *ngIf="submenu.submenu" class="dropdown-menu"></ul>
+</li>    
